@@ -2,7 +2,7 @@
 smfplayer.js
 ============
 
-smfplayer.js is a standard MIDI file player using [synthesizer] corresponding to [WebMidiLink}(http://www.g200kg.com/en/docs/webmidilink/).
+smfplayer.js is a standard MIDI file player using [synthesizer] corresponding to [WebMidiLink](http://www.g200kg.com/en/docs/webmidilink/).
 
 
 ## How To Use
