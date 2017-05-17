@@ -332,7 +332,7 @@ goog.require = function(name) {
 
     var errorMessage = 'goog.require could not find: ' + name;
     if (goog.global.console) {
-      goog.global.console['error'](errorMessage);
+      goog.global.console.error(errorMessage);
     }
 
 
