@@ -2,10 +2,10 @@
 smfplayer.js
 ============
 
-smfplayer.js は [WebMidiLink](http://www.g200kg.com/en/docs/webmidilink/) 対応シンセサイザを用いた標準 MIDI ファイルプレイヤーです。
+smfplayer.js is a standard MIDI file player using [synthesizer] corresponding to [WebMidiLink}(http://www.g200kg.com/en/docs/webmidilink/).
 
 
-## 使い方
+## How To Use
 
 ```js
 var player = new SMF.Player();
@@ -58,19 +58,19 @@ function loadSMF(url) {
 ```
 
 
-## 対応ブラウザ
+## Supported Browsers
 
 - Firefox 7+
 - Google Chrome 7+
 - Safari 5.1+
 
 
-## WebMidiLink 対応
+## WebMidiLink Compatibility
 
-sf2synth.js は WebMidiLink の Link Level 1 にのみ対応しています。
+Sf2synth.js is compatible only with Link Level 1 of WebMidiLink.
 
 
-## ライセンス
+## License
 
 Copyright &copy; 2013 imaya / GREE Inc.
 Licensed under the MIT License.
