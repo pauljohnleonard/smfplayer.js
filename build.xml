@@ -14,15 +14,15 @@
   <property name="export" value="${rootpath}/export"/>
   <property name="externs" value="${rootpath}/externs"/>
 
-  <!-- ライセンスとビルドされたファイルをプロパティとして読み込む -->
+  <!-- Load licenses and built files as properties -->
   <loadfile property="license" srcfile="../LICENSE.min"/>
 
-  <!-- ビルドの事前準備 -->
+  <!-- Preparation for build -->
   <target name="prebuild">
     <mkdir dir="${bin}"/>
   </target>
 
-  <!-- 依存関係を解決する -->
+  <!-- Resolve dependencies -->
   <target name="deps">
     <exec executable="python" failonerror="true">
       <arg line="${depswriter}"/>
@@ -42,12 +42,12 @@
   </target>
 
   <target name="parser" depends="deps,prebuild">
-    <!-- 出力ファイル名 -->
+    <!-- Output file name -->
     <local name="basename"/>
     <property name="basename" value="smf.parser.min.js"/>
     <local name="outfile"/>
     <property name="outfile" value="${bin}/${basename}"/>
-    <!-- ビルド(出力先は一時ファイル) -->
+    <!-- Build (Output destination is temporary file) -->
     <java jar="${compiler}" fork="true" failonerror="true">
       <arg line="--compilation_level=${level}"/>
       <arg line="--warning_level=VERBOSE"/>
@@ -68,12 +68,12 @@
   </target>
 
   <target name="player" depends="deps,prebuild">
-    <!-- 出力ファイル名 -->
+    <!-- Output file name -->
     <local name="basename"/>
     <property name="basename" value="smfplayer.min.js"/>
     <local name="outfile"/>
     <property name="outfile" value="${bin}/${basename}"/>
-    <!-- ビルド(出力先は一時ファイル) -->
+    <!-- Build (Output destination is temporary file) -->
     <java jar="${compiler}" fork="true" failonerror="true">
       <arg line="--compilation_level=${level}"/>
       <arg line="--warning_level=VERBOSE"/>
@@ -100,16 +100,16 @@
     </java>
   </target>
 
-  <!-- 全て作成 -->
+  <!-- Create all -->
   <target name="all" depends="parser,player"/>
 
-  <!--  削除 -->
+  <!--  Delete -->
   <target name="clean">
     <delete file="${depend}"/>
     <delete dir="${bin}"/>
   </target>
 
-  <!-- リビルド -->
+  <!-- Rebuild -->
   <target name="rebuild" depends="clean,all"/>
 </project>
 <!-- vim: set expandtab ts=2 sw=2: -->
